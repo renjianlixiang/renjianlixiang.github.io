@@ -1,6 +1,6 @@
 ---
 title: Redis工具类
-date: 2023/07/22 10:24:00
+date: 2022/08/10 10:24:00
 updated: 2023/07/22 10:24:00
 tags: 
 - Redis
@@ -79,7 +79,6 @@ import java.util.concurrent.TimeUnit;
 public class RedisUtils {
 
     public static RedisTemplate<String, Object> redisTemplate;
-  
 
     public static void setRedisTemplate(RedisTemplate<String, Object> redisTemplate) {
         RedisUtils.redisTemplate = redisTemplate;

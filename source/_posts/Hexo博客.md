@@ -427,7 +427,7 @@ codeblock:
     style: mac
 ```
 
-行内代码和超链样式
+#### 行内代码和超链样式
 
 在 `themes\next\source\css\main.styl` 文件，添加如下内容：
 
@@ -458,27 +458,27 @@ code {
 
 1. 在`\themes\next\layout\_macro` 中新建 `post-end-tag.swig` 文件，并添加以下内容：
 
-```swig
-<div>
-  {% if not is_index %}
-    <div style="text-align:center;color:#bfbfbf;font-size:16px;">
-      <span>-------- 本文结束 </span>
-      <i class="fa fa-{{ config.post_end_tag.icon }}"></i>
-      <span> 感谢阅读 --------</span>
+    ```swig
+    <div>
+      {% if not is_index %}
+        <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+          <span>-------- 本文结束 </span>
+          <i class="fa fa-{{ config.post_end_tag.icon }}"></i>
+          <span> 感谢阅读 --------</span>
+        </div>
+      {% endif %}
     </div>
-  {% endif %}
-</div>
-```
+    ```
 
 2. 编辑`\themes\next\layout_macro\post.swig`文件，添加如下内容：
 
-```swig
-{% if config.post_end_tag.enabled and not is_index %}
-	<div>
-		{% include 'post-end-tag.swig' %}
-	</div>
-{% endif %}
-```
+    ```swig
+    {% if config.post_end_tag.enabled and not is_index %}
+        <div>
+            {% include 'post-end-tag.swig' %}
+        </div>
+    {% endif %}
+    ```
 
 3. 编辑主题配置文件，添加如下内容：
 
@@ -522,33 +522,33 @@ code {
 
 1. 安装`hexo-helper-live2d`
 
-```bash
-npm install --save hexo-helper-live2d
-```
+    ```bash
+    npm install --save hexo-helper-live2d
+    ```
 
 2. 安装具体模型形象
 
-```bash
-npm install <packagename>
-```
+    ```bash
+    npm install <packagename>
+    ```
 
 3. 编辑站点配置文件，添加如下内容：
 
-```yaml
-live2d:
-  enable: true
-  pluginModelPath: assets/
-  model:
-    use: <packagename>  
-  display:
-    position: left
-    width: 150 
-    height: 300
-  mobile:
-    show: false   
-  rect:
-    opacity:0.7
-```
+    ```yaml
+    live2d:
+      enable: true
+      pluginModelPath: assets/
+      model:
+        use: <packagename>  
+      display:
+        position: left
+        width: 150 
+        height: 300
+      mobile:
+        show: false   
+      rect:
+        opacity:0.7
+    ```
 
 ## Hexo备份
 
@@ -570,14 +570,14 @@ Hexo部署到Github的是Hexo编译后的文件，这些文件是用来生成网
 
 4. 之后每次更新博客，执行如下命令：
 
-```bash
-hexo clean
-git add .
-git commit -m "xxx"
-git push
-hexo generate
-hexo deploy
-```
+    ```bash
+    hexo clean
+    git add .
+    git commit -m "xxx"
+    git push
+    hexo generate
+    hexo deploy
+    ```
 
 ### Hexo恢复
 
