@@ -1,7 +1,7 @@
 ---
 title: Hexo博客
 date: 2021/10/24 10:24:00
-updated: 2023/07/19 10:24:00
+updated: 2023/07/20 10:24:00
 tags: Hexo博客
 categories: Hexo博客
 ---
@@ -13,11 +13,11 @@ Hexo+GitHub搭建个人博客以及使用Next主题进行美化。
 
 [Hexo](https://hexo.io/zh-cn/)是一个快速、简洁且高效的博客框架。Hexo 使用Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。本文讲述Hexo+GitHub搭建个人博客以及使用Next主题进行美化。
 
+本文默认你已经安装好Git和Node.js工具。本文所述中的站点配置文件为Hexo根目录下的`_config.yml`，主题配置文件为`\themes\next`下的`_config.yml`
+
 ## 安装Hexo及部署到GitHub
 
 ### 安装Hexo
-
-本文默认你已经安装好Git和Node.js工具。
 
 1. 使用 npm 安装 Hexo。
 
@@ -64,7 +64,7 @@ Hexo+GitHub搭建个人博客以及使用Next主题进行美化。
     npm install hexo-deployer-git --save
     ```
 
-3. 在网站配置信息`_config.yml` 中添加以下配置：
+3. 编辑站点配置文件`_config.yml` 中添加以下配置：
 
     ```yaml
     deploy:
@@ -88,7 +88,7 @@ Hexo+GitHub搭建个人博客以及使用Next主题进行美化。
 
 1. 获取域名，域名购买网址:[https://cn.aliyun.com](https://cn.aliyun.com/) (阿里云官网)
 
-2. 域名解析，打开阿里云域名控制台，在域名列表，选择域名解析，新增三条解析记录。
+2. 域名解析，打开阿里云域名控制台，在域名列表，选择域名解析，添加三条解析记录。
 
     ```
     第一条:记录类型:A，主机记录:@，记录值:192.30.252.154
@@ -108,7 +108,7 @@ Hexo+GitHub搭建个人博客以及使用Next主题进行美化。
     hexo deploy
     ```
     
-5. 打开Hexo代码仓库，在Settings->Pages的Custom domain中输入域名，点击save。
+5. 打开Hexo代码仓库，在Settings->Pages的`Custom domain`中输入域名，点击save。
 
 ## Hexo使用NexT主题美化
 
@@ -122,7 +122,7 @@ NexT主题的官网地址：https://theme-next.iissnan.com/
     git clone https://github.com/iissnan/hexo-theme-next themes/next
     ```
 
-2. 打开站点配置文件， 找到 theme字段，并将其值更改为 next。
+2. 编辑站点配置文件， 找到 `theme`字段，并将其值更改为 next。
 
     ```yaml
     theme: next
@@ -137,7 +137,7 @@ NexT主题的官网地址：https://theme-next.iissnan.com/
     - Pisces
     - Gemini
     
-    Scheme 的切换通过更改主题配置文件，搜索 scheme 关键字。 你会看到有四行 scheme 的配置，将你启用的 scheme 前面注释 `#` 去除即可。
+    Scheme 的切换通过更改主题配置文件，将你启用的 `scheme` 前面注释 `#` 去除即可。
     
     ```yaml
     # Schemes
@@ -149,7 +149,7 @@ NexT主题的官网地址：https://theme-next.iissnan.com/
 
 ### 配置菜单
 
-1. 编辑主题配置文件，将你启用的菜单项前面注释 `#` 去除即可。：
+1. 编辑主题配置文件，将你启用的菜单项前面注释 `#` 去除即可。
 
     ```yaml
     menu:
@@ -195,7 +195,7 @@ NexT主题的官网地址：https://theme-next.iissnan.com/
 
 #### 站点基本信息
 
-编辑网站配置文件，修改如下内容：
+编辑站点配置文件，修改如下内容：
 
 ```yaml
 # Site
@@ -228,7 +228,7 @@ social:
 
 #### 头像设置
 
-1. 选取头像文件，存放在\themes\next\source\images中。
+1. 选取头像文件，存放在`\themes\next\source\images`中。
 
 2. 编辑主题配置文件。
 
@@ -280,7 +280,7 @@ social:
 
 #### 顶部加载条
 
-编辑主题配置文件，找到pace改为true，并从提供的样式中选择相应样式即可。
+编辑主题配置文件，找到`pace`改为true，并从提供的样式中选择相应样式即可。
 
 ```yaml
 pace:
@@ -306,13 +306,13 @@ back2top:
 
 #### 鼠标点击小红心
 
-1. 在themes/next/source/js/下新建clicklove.js，内容如下：
+1. 在`themes/next/source/js/`下新建`clicklove.js`，内容如下：
 
     ```javascript
     !function (e, t, a) { function n() { c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), o(), r() } function r() { for (var e = 0; e < d.length; e++)d[e].alpha <= 0 ? (t.body.removeChild(d[e].el), d.splice(e, 1)) : (d[e].y--, d[e].scale += .004, d[e].alpha -= .013, d[e].el.style.cssText = "left:" + d[e].x + "px;top:" + d[e].y + "px;opacity:" + d[e].alpha + ";transform:scale(" + d[e].scale + "," + d[e].scale + ") rotate(45deg);background:" + d[e].color + ";z-index:99999"); requestAnimationFrame(r) } function o() { var t = "function" == typeof e.onclick && e.onclick; e.onclick = function (e) { t && t(), i(e) } } function i(e) { var a = t.createElement("div"); a.className = "heart", d.push({ el: a, x: e.clientX - 5, y: e.clientY - 5, scale: 1, alpha: 1, color: s() }), t.body.appendChild(a) } function c(e) { var a = t.createElement("style"); a.type = "text/css"; try { a.appendChild(t.createTextNode(e)) } catch (t) { a.styleSheet.cssText = e } t.getElementsByTagName("head")[0].appendChild(a) } function s() { return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")" } var d = []; e.requestAnimationFrame = function () { return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) { setTimeout(e, 1e3 / 60) } }(), n() }(window, document);
     ```
 
-2. 编辑themes/next/layout/_layout.swig 文件，添加如下内容：
+2. 编辑`themes/next/layout/_layout.swig` 文件，添加如下内容：
 
     ```swig
     {% if theme.clicklove %}
@@ -326,9 +326,45 @@ back2top:
     clicklove: true
     ```
 
+#### 底部布局
+
+编辑主题配置文件，根据注释自行修改如下内容：
+
+```yaml
+footer:
+  # Specify the date when the site was setup. If not defined, current year will be used.
+  since: 2020
+
+  # Icon between year and copyright info.
+  icon:
+    # Icon name in Font Awesome. See: https://fontawesome.com/icons
+    name: fa fa-heart
+    # If you want to animate the icon, set it to true.
+    animated: true
+    # Change the color of icon, using Hex Code.
+    color: "#ff0000"
+
+  # If not defined, `author` from Hexo `_config.yml` will be used.
+  copyright: 昔年
+
+  # Powered by Hexo & NexT
+  powered: false
+
+  # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
+  beian:
+    enable: false
+    icp:
+    # The digit in the num of gongan beian.
+    gongan_id:
+    # The full num of gongan beian.
+    gongan_num:
+    # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
+    gongan_icon_url:
+```
+
 ### 文章内容相关设置
 
-#### 文章显示摘要
+#### 文章内容部分显示
 
 1. 编辑主题配置文件，修改内容如下：
 
@@ -348,7 +384,7 @@ back2top:
     npm install hexo-symbols-count-time --save
     ```
 
-2. 编辑网站配置文件，新增如下内容：
+2. 编辑站点配置文件，添加如下内容：
 
     ```yaml
     symbols_count_time:
@@ -390,9 +426,36 @@ codeblock:
     style: mac
 ```
 
+行内代码和超链样式
+
+在 `themes\next\source\css\main.styl` 文件，添加如下内容：
+
+```stylus
+code {
+  padding: 2px 4px;
+  word-wrap: break-word;
+  color: #c7254e;
+  background: #f9f2f4;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+.post-body p a,
+.post-body li a {
+  color: #0593d3;
+  border-bottom: none;
+  border-bottom: 1px solid #0593d3;
+  &:hover {
+    color: #fc6423;
+    border-bottom: none;
+    border-bottom: 1px solid #fc6423;
+  }
+}
+```
+
 #### 文章结束标记
 
-1. 在`\themes\next\layout\_macro` 中新建 post-end-tag.swig 文件，并添加以下内容：
+1. 在`\themes\next\layout\_macro` 中新建 `post-end-tag.swig` 文件，并添加以下内容：
 
 ```swig
 <div>
@@ -406,7 +469,7 @@ codeblock:
 </div>
 ```
 
-2. 编辑`\themes\next\layout_macro\post.swig`文件，新增如下内容：
+2. 编辑`\themes\next\layout_macro\post.swig`文件，添加如下内容：
 
 ```swig
 {% if config.post_end_tag.enabled and not is_index %}
@@ -416,7 +479,7 @@ codeblock:
 {% endif %}
 ```
 
-3. 编辑主题配置文件，新增如下内容：
+3. 编辑主题配置文件，添加如下内容：
 
     ```yaml
     post_end_tag:
@@ -426,7 +489,7 @@ codeblock:
 
 #### 添加版权信息
 
-1. 编辑网站配置文件，修改如下内容：
+1. 编辑站点配置文件，修改如下内容：
 
     ```yaml
     # URL
@@ -454,42 +517,6 @@ codeblock:
       language:
     ```
 
-#### 文章底部布局
-
-编辑主题文件，根据注释自行修改如下内容：
-
-```yaml
-footer:
-  # Specify the date when the site was setup. If not defined, current year will be used.
-  since: 2020
-
-  # Icon between year and copyright info.
-  icon:
-    # Icon name in Font Awesome. See: https://fontawesome.com/icons
-    name: fa fa-heart
-    # If you want to animate the icon, set it to true.
-    animated: true
-    # Change the color of icon, using Hex Code.
-    color: "#ff0000"
-
-  # If not defined, `author` from Hexo `_config.yml` will be used.
-  copyright: 昔年
-
-  # Powered by Hexo & NexT
-  powered: false
-
-  # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
-  beian:
-    enable: false
-    icp:
-    # The digit in the num of gongan beian.
-    gongan_id:
-    # The full num of gongan beian.
-    gongan_num:
-    # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
-    gongan_icon_url:
-```
-
 ### 看板娘
 
 1. 安装`hexo-helper-live2d`
@@ -504,7 +531,7 @@ npm install --save hexo-helper-live2d
 npm install <packagename>
 ```
 
-3. 编辑站点配置文件，新增如下内容：
+3. 编辑站点配置文件，添加如下内容：
 
 ```yaml
 live2d:
@@ -521,3 +548,44 @@ live2d:
   rect:
     opacity:0.7
 ```
+
+## Hexo备份
+
+Hexo部署到Github的是Hexo编译后的文件，这些文件是用来生成网页的，并不包含我们的源文件。接下来讲述如何备份保存Hexo源文件。
+
+### Hexo备份
+
+1. 在Hexo部署的GitHub代码仓库新建代码分支，命名为backup，并设置为默认分支。
+
+2. 将刚刚创建的分支clone到本地，我们只需要其中的`.git`文件。把clone下来的项目中的`.git`文件复制到Hexo根目录下。如果搭建博客时clone过主题文件的，请把主题文件里面的`.git`文件删除。
+
+3. 在Hexo根目录下，执行如下命令：
+
+    ```bash
+    git add .
+    git commit -m "xxx"
+    git push origin hexo
+    ```
+
+4. 之后每次更新博客，执行如下命令：
+
+```bash
+hexo clean
+git add .
+git commit -m "xxx"
+git push
+hexo generate
+hexo deploy
+```
+
+### Hexo恢复
+
+1. 将backup分支clone到本地，进入项目，执行如下命令：
+
+    ```bash
+    npm install hexo-cli
+    npm install
+    npm install hexo-deployer-git
+    ```
+
+2. 将之前安装过的其他插件安装即可。
