@@ -5,6 +5,7 @@ updated: 2023/07/20 10:24:00
 tags: Hexo博客
 categories: Hexo博客
 ---
+
 Hexo+GitHub搭建个人博客以及使用Next主题进行美化。
 
 <!-- more -->
@@ -137,7 +138,7 @@ NexT主题的官网地址：https://theme-next.iissnan.com/
     - Pisces
     - Gemini
     
-    Scheme 的切换通过更改主题配置文件，将你启用的 `scheme` 前面注释 `#` 去除即可。
+    Scheme 的切换通过更改主题配置文件，将你启用的 `scheme` 前的注释 `#` 去除即可。
     
     ```yaml
     # Schemes
@@ -149,7 +150,7 @@ NexT主题的官网地址：https://theme-next.iissnan.com/
 
 ### 配置菜单
 
-1. 编辑主题配置文件，将你启用的菜单项前面注释 `#` 去除即可。
+1. 编辑主题配置文件，将你启用的菜单项前的注释 `#` 去除即可。
 
     ```yaml
     menu:
